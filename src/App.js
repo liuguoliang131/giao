@@ -1,14 +1,14 @@
 /*
  * @Date: 2022-06-30 14:13:48
  * @LastEditors: 刘国亮
- * @LastEditTime: 2022-07-01 17:12:29
+ * @LastEditTime: 2022-07-01 17:53:11
  * @FilePath: \react-project\src\App.js
  * @Description: 
  */
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Index'
-
+import Ul from './components/Ul/Index'
 export default class App extends React.Component {
   state = {
     list:[]
@@ -27,6 +27,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Header changeList={this.changeList}></Header>
+        <Ul {...this.state}></Ul>
       </div>
     )
   }
