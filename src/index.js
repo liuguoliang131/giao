@@ -1,17 +1,19 @@
+/*
+ * @Date: 2022-06-30 14:13:48
+ * @LastEditors: 刘国亮
+ * @LastEditTime: 2022-07-01 17:21:38
+ * @FilePath: \react-project\src\index.js
+ * @Description: 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import utils from './utils/index'
+React.$utils = utils
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

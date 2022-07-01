@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+/*
+ * @Date: 2022-06-30 14:13:48
+ * @LastEditors: 刘国亮
+ * @LastEditTime: 2022-07-01 17:12:29
+ * @FilePath: \react-project\src\App.js
+ * @Description: 
+ */
+import React from 'react';
 import './App.css';
+import Header from './components/Header/Index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  state = {
+    list:[]
+  }
+  changeList = (type,newOrIdx)=>{
+    console.log(type,newOrIdx)
+    const {list} = this.state
+    if(type==='add') {
+       list.unshift(newOrIdx)
+    }else if(type==='del') {
+      list.splice(newOrIdx,1)
+    }
+    this.setState({list})
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header changeList={this.changeList}></Header>
+      </div>
+    )
+  }
+  
 }
-
-export default App;
